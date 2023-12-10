@@ -1,49 +1,30 @@
-<a href="https://totaltypescript.com/tutorials/beginners-typescript"><img src="https://res.cloudinary.com/total-typescript/image/upload/v1664461034/beginners-typescript-tutorial/github_2x_himnyi.png" alt="beginner typescript tutorial" /></a>
+# Typescript Labs
 
-## Quickstart
+## Lab 1: Implicit "Any" type error
 
-Take the course on [Total TypeScript](https://totaltypescript.com/tutorials/beginners-typescript). There, you'll find:
+file: `/src/01-number.problem.ts`
 
-- Video explanations for each problem and solution
-- Transcripts
-- Text explanations
-- A built-in Stackblitz editor
+Consider this addTwoNumbers function:
 
-```sh
-# Installs all dependencies
-npm install
-
-# Asks you which exercise you'd like to run, and runs it
-npm run exercise
+```ts
+export const addTwoNumbers = (a, b) => {
+  return a + b;
+};
 ```
 
-## How to take the course
+This function takes in a and b and adds them together.
 
-You'll notice that the course is split into exercises. Each exercise is split into a `*.problem` and a `*.solution`.
+It looks like perfectly valid JavaScript.
 
-To take an exercise:
+Running npm run exercise 01 in the terminal, we can see that our tests pass.
 
-1. Run `npm run exercise`
-2. Choose which exercise you'd like to run.
+But even though it looks valid and tests pass, TypeScript isn't happy.
 
-This course encourages **active, exploratory learning**. In the video, I'll explain a problem, and **you'll be asked to try to find a solution**. To attempt a solution, you'll need to:
+The terminal displays the following errors along with the line of code where they happen:
 
-1. Check out [TypeScript's docs](https://www.typescriptlang.org/docs/handbook/intro.html).
-1. Try to find something that looks relevant.
-1. Give it a go to see if it solves the problem.
+```sh
+Parameter 'a' implicitly has an 'any' type.
+Parameter 'b' implicitly has an 'any' type.
+```
 
-You'll know if you've succeeded because the tests will pass.
-
-**If you succeed**, or **if you get stuck**, unpause the video and check out the `*.solution`. You can see if your solution is better or worse than mine!
-
-## Acknowledgements
-
-Say thanks to Matt on [Twitter](https://twitter.com/mattpocockuk) or by joining his [Discord](https://discord.gg/8S5ujhfTB3). Consider signing up to his [Total TypeScript course](https://totaltypescript.com).
-
-## Reference
-
-### `npm run exercise`
-
-Alias: `npm run e`
-
-Open a prompt for choosing which exercise you'd like to run.
+**_challenge_**: Read through the ["Migrating from JavaScript" article in the TypeScript docs](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html) and see if you can find how to fix these TypeScript errors.
